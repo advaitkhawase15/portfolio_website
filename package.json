@@ -11,7 +11,8 @@
   "dependencies": {
     "next": "15.3.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-xarrows": "^2.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

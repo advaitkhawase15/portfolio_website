@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer utilities {
+  .font-outline-1 {
+    -webkit-text-stroke: 1px #f5f5f5;;
+    color: transparent;
+  }
+}

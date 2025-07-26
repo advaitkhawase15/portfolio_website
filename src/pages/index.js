@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Geist, Geist_Mono } from "next/font/google";
 import Xarrow, { Xwrapper } from "react-xarrows";
 
@@ -12,8 +12,38 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const sections = [
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "about_me", label: "About me" },
+  { id: "projects", label: "Projects" },
+  { id: "contact_me", label: "Contact Me" },
+];
+
+
 export default function Home() {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [active, setActive] = useState(sections[0].id);
+
+  useEffect(() => {
+    function onScroll() {
+      const scrollPos = window.scrollY + 200; // Offset for navbar
+
+      let current = sections[0].id;
+      for (const section of sections) {
+        const el = document.getElementById(section.id);
+        if (el && el.offsetTop <= scrollPos) {
+          current = section.id;
+        }
+      }
+      setActive(current);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
@@ -91,33 +121,22 @@ export default function Home() {
 
               {/* --------- LINKS (center on md+) --------- */}
               <div className="flex flex-col md:flex-row gap-2 md:gap-3 md:mx-auto">
-                <a
-                  className="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-gray-800 font-medium text-gray-800 hover:text-gray-800 dark:border-neutral-200 dark:text-neutral-200"
-                  href="index.html"
-                  aria-current="page"
-                >
-                  About Me
-                </a>
-                <a
-                  className="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 dark:text-neutral-400"
-                  href="work.html"
-                >
-                  Skills
-                </a>
-                <a
-                  className="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 dark:text-neutral-400"
-                  href="reviews.html"
-                >
-                  Projects
-                </a>
-                <a
-                  className="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 dark:text-neutral-400"
-                  href="reviews.html"
-                >
-                  Contact Me
-                </a>
+                {sections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className={`py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 font-medium transition
+            ${active === section.id
+                        ? "border-gray-800 text-gray-800 dark:border-neutral-200 dark:text-neutral-200"
+                        : "border-transparent text-gray-500 hover:text-gray-800 dark:text-neutral-400"
+                      }`
+                    }
+                    aria-current={active === section.id ? "page" : undefined}
+                  >
+                    {section.label}
+                  </a>
+                ))}
               </div>
-
               {/* --------- RESUME BUTTON (right) --------- */}
             </div>
             {/* <button
@@ -135,8 +154,8 @@ export default function Home() {
           </div>
         </nav>
       </header>
-      {/* ABOUT ME */}
-      <div className='mx-8 px-8 flex flex-row'>
+      {/* HOME */}
+      <div id="home" className='mx-8 px-8 flex flex-row'>
         <div className='w-[60%] flex items-center'>
           <section className="flex flex-col items-center justify-center min-h-screen">
             <h1 className="text-3xl md:text-5xl font-light text-neutral-300 tracking-tight mb-4">
@@ -188,40 +207,38 @@ export default function Home() {
         </div>
       </div>
       {/* SKILLS */}
-      <Xwrapper>
-        <div className='mx-8'>
-          <div className='bg-neutral-100 rounded-[24px] p-8'>
-            <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-800'>
-              My Skills
-            </div>
-            <div className='flex flex-wrap align-start justify-between gap-8'>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-              <div className='size-40 rounded border-2 border-neutral-800'></div>
-            </div>
+      <div id="skills" className='mx-8 scroll-mt-30'>
+        <div className='bg-neutral-100 rounded-[24px] p-8'>
+          <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-800'>
+            My Skills
+          </div>
+          <div className='flex flex-wrap align-start justify-between gap-8'>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
+            <div className='size-40 rounded border-2 border-neutral-800'></div>
           </div>
         </div>
+      </div>
+      <Xwrapper>
         {/* EXPERIENCE */}
-        <div className='mx-8 relative'>
+        <div id="experience" className='mx-8 relative scroll-mt-30'>
           <div className='w-full p-8'>
             <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-100'>
-              My Experience
+              Experience
             </div>
-            <div className="flex flex-col items-center space-y-10 py-16">
-              {/* First Event */}
+            <div className="flex flex-col items-center space-y-10">
               <div id="start" className="absolute -top-1 left-10 -z-2"></div>
-              {/* Second Event */}
               <div id="node1" className="text-left text-neutral-800 relative w-2/3 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
                 <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
                   <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
@@ -236,9 +253,8 @@ export default function Home() {
                   per inceptos himenaeos. Donec aliquet, ante posuere finibus condimentum, nunc sapien
                   elementum ex, a sagittis lorem mauris quis quam. Nunc rhoncus justo et ex pulvinar vulputate.
                 </div>
-                <div id="temp1" className='absolute -right-40 bottom-10'></div>
+                <div id="temp1" className='absolute -right-30 bottom-10'></div>
               </div>
-              {/* Third Event */}
               {/* <div id="node2" className=" w-2/3 bg-white border border-neutral-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate, neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula aliquet lorem, nec dignissim nulla purus vitae arcu. Nam et dolor eget felis blandit auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec aliquet, ante posuere finibus condimentum, nunc sapien elementum ex, a sagittis lorem mauris quis quam. Nunc rhoncus justo et ex pulvinar vulputate. Vestibulum malesuada vitae lacus ornare volutpat. Nullam ac arcu sit amet orci consectetur blandit. Ut feugiat, ex vel tempor blandit, neque justo vehicula ligula, id tincidunt libero quam vel quam. Curabitur hendrerit ac nisi vitae dapibus. Cras blandit magna ut sem vestibulum, a bibendum dolor tincidunt. Curabitur venenatis semper diam ac consequat.
               </div> */}
@@ -252,6 +268,7 @@ export default function Home() {
           start="start"
           end="node1"
           color="#f5f5f5"
+          headShape="circle"
           strokeWidth={2}
           headSize={6}
           path="smooth"
@@ -294,7 +311,7 @@ export default function Home() {
         />
       </Xwrapper>
       {/* ABOUT ME */}
-      <div className='flex flex-row gap-6 w-full py-8 px-16 bg-neutral-100 justify-between'>
+      <div id="about_me" className='flex flex-row gap-6 w-full py-8 px-16 bg-neutral-100 justify-between scroll-mt-30'>
         <div className='w-1/4'>
           <svg className='w-full' viewBox="0 0 530 574" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M515.447 2H14C7.37258 2 2 7.37261 2 14V515.447C2 522.074 7.37261 527.447 14 527.447H515.447C522.074 527.447 527.447 522.074 527.447 515.447V14C527.447 7.37258 522.074 2 515.447 2Z" stroke="black" stroke-width="4" stroke-miterlimit="10" />
@@ -373,22 +390,151 @@ export default function Home() {
         </div>
       </div>
       {/* PROJECTS */}
-      <div className='mx-8'>
-        <div className='w-full h-lvh p-8'>
-          <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-100'>
-            My Projects
+      <Xwrapper>
+        <div id="projects" className='relative mx-8 scroll-mt-30'>
+          <div className='w-full p-8'>
+            <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-100'>
+              Projects
+            </div>
+            <div>
+              <div id="project_start" className="absolute -top-1 left-1/2 -z-2"></div>
+              <div className="flex items-center">
+                <div className="h-fit text-left text-neutral-800 relative w-1/3 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+                  <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
+                    <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
+                  </div>
+                  <div className='mb-4 w-full'>Jio Platform Limited (JPL)</div>
+                  <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate,
+                    neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna
+                    risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
+                  </div>
+                </div>
+                <div id="project_node1" className="ml-2"></div>
+              </div>
+              <div className="flex justify-end items-center">
+                <div id="project_node2" className="mr-2"></div>
+                <div className="h-fit text-left text-neutral-800 relative w-1/3 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+                  <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
+                    <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
+                  </div>
+                  <div className='mb-4 w-full'>Jio Platform Limited (JPL)</div>
+                  <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate,
+                    neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna
+                    risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
+                  </div>
+                  {/* <div id="temp1" className='absolute -right-40 bottom-10'></div> */}
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className=" h-fit text-left text-neutral-800 w-1/3 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+                  <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
+                    <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
+                  </div>
+                  <div className='mb-4 w-full'>Jio Platform Limited (JPL)</div>
+                  <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate,
+                    neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna
+                    risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
+                  </div>
+                  {/* <div id="temp1" className='absolute -right-40 bottom-10'></div> */}
+                </div>
+                <div id="project_node3" className="ml-2"></div>
+              </div>
+              <div className="flex justify-end items-center">
+                <div id="project_node4" className="mr-2"></div>
+                <div className="h-fit text-left text-neutral-800 w-1/3 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+                  <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
+                    <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
+                  </div>
+                  <div className='mb-4 w-full'>Jio Platform Limited (JPL)</div>
+                  <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate,
+                    neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna
+                    risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
+                  </div>
+                  {/* <div id="temp1" className='absolute -right-40 bottom-10'></div> */}
+                </div>
+              </div>
+              {/* <div id="node2" className=" w-2/3 bg-white border border-neutral-400">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate, neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula aliquet lorem, nec dignissim nulla purus vitae arcu. Nam et dolor eget felis blandit auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec aliquet, ante posuere finibus condimentum, nunc sapien elementum ex, a sagittis lorem mauris quis quam. Nunc rhoncus justo et ex pulvinar vulputate. Vestibulum malesuada vitae lacus ornare volutpat. Nullam ac arcu sit amet orci consectetur blandit. Ut feugiat, ex vel tempor blandit, neque justo vehicula ligula, id tincidunt libero quam vel quam. Curabitur hendrerit ac nisi vitae dapibus. Cras blandit magna ut sem vestibulum, a bibendum dolor tincidunt. Curabitur venenatis semper diam ac consequat.
+              </div> */}
+              <div id="project_end" className="absolute bottom-0 left-1/2 -z-2"></div>
+            </div>
           </div>
         </div>
-      </div>
+        {/* Arrows */}
+        <Xarrow
+          className="-z-1"
+          start="project_start"
+          end="project_node1"
+          color="#f5f5f5"
+          headShape="circle"
+          strokeWidth={2}
+          headSize={6}
+          path="smooth"
+          curveness={0.7}
+          startAnchor="bottom"
+          endAnchor="top"
+        />
+        <Xarrow
+          start="project_node1"
+          end="project_node2"
+          color="#f5f5f5"
+          headShape="circle"
+          strokeWidth={2}
+          headSize={6}
+          path="smooth"
+          curveness={0.7}
+          startAnchor="bottom"
+          endAnchor="top"
+        />
+        <Xarrow
+          start="project_node2"
+          end="project_node3"
+          color="#f5f5f5"
+          headShape="circle"
+          strokeWidth={2}
+          headSize={6}
+          path="smooth"
+          curveness={0.7}
+          startAnchor="bottom"
+          endAnchor="top"
+        />
+        <Xarrow
+          start="project_node3"
+          end="project_node4"
+          color="#f5f5f5"
+          headShape="circle"
+          strokeWidth={2}
+          headSize={6}
+          path="smooth"
+          curveness={0.7}
+          startAnchor="bottom"
+          endAnchor="top"
+        />
+        <Xarrow
+          start="project_node4"
+          end="project_end"
+          color="#f5f5f5"
+          strokeWidth={2}
+          headSize={6}
+          path="smooth"
+          curveness={0.7}
+          startAnchor="bottom"
+          endAnchor="top"
+        />
+      </Xwrapper >
       {/* Contact me */}
-        <div className='bg-neutral-100 p-8'>
-          <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-800'>
-            Contact Me
-          </div>
+      < div id="contact_me" className='bg-neutral-100 p-8 scroll-mt-30' >
+        <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-800'>
+          Contact Me
         </div>
+      </div >
       {/* FOOTER */}
-      <div className='w-full h-20 bg-neutral-900 border-t border-neutral-700'>
-      </div>
+      < div className='w-full h-20 bg-neutral-900 border-t border-neutral-700' >
+      </div >
     </>
   );
 }

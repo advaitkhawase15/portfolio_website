@@ -56,9 +56,9 @@ export default function Home() {
       {/* NAVBAR */}
       <header className="mx-4 sm:mx-8 sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 text-sm">
         <nav className="w-full flex mt-4 bg-white border border-gray-200 rounded-[35px] sm:rounded-[24px] mx-2 flex flex-wrap md:flex-nowrap items-center justify-between p-4 md:p-8 md:py-0 sm:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
-          <div className="flex items-center">
+          <a className="flex items-center" href='#home'>
             Portfolio
-          </div>
+          </a>
 
           <div className="flex items-center gap-1 md:order-4">
             {/* <a className="w-full sm:w-auto whitespace-nowrap py-2 px-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800 dark:hover:bg-neutral-200" href="#">
@@ -157,9 +157,9 @@ export default function Home() {
         </nav>
       </header>
       {/* HOME */}
-      <div id="home" className='mx-4 sm:mx-8 px-8 flex flex-col sm:flex-row'>
-        <div className='w-full sm:w-[60%] sm:h-auto flex items-center z-2'>
-          <section className="flex flex-col items-center justify-start mt-40 sm:mt-0 sm:justify-center min-h-screen">
+      <div id="home" className='mx-4 sm:mx-8 px-8 flex flex-col lg:flex-row'>
+        <div className='w-full lg:w-[60%] h-90 lg:h-auto flex items-center z-2'>
+          <section className="w-full flex flex-col mt-10 md:mt-20 lg:mt-0 justify-start lg:justify-center lg:min-h-screen">
             <h1 className="text-3xl md:text-5xl font-light text-neutral-300 tracking-tight mb-4">
               Hello!! I am <span className="text-neutral-100 font-bold decoration-white/40">Advait Khawase</span>
               <br /> a <span className='font-bold text-neutral-100 text-stroke font-outline-1'> Data Engineer</span>.
@@ -169,8 +169,8 @@ export default function Home() {
             </p>
           </section>
         </div>
-        <div className='w-full sm:w-1/2 md:w-2/5 sm:h-auto relative'>
-          <HomeSvg className='absolute bottom-0 lg:-bottom-15 xl:-bottom-20' />
+        <div className='w-full h-100 sm:h-150 lg:w-2/5 lg:h-auto relative'>
+          <HomeSvg className='w-5/6 md:w-2/3 lg:w-full absolute right-0 bottom-10 sm:-bottom-10 lg:-bottom-15 xl:-bottom-20' />
         </div>
       </div>
       {/* SKILLS */}
@@ -179,7 +179,7 @@ export default function Home() {
           <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-800'>
             My Skills
           </div>
-          <div className='flex flex-wrap justify-center justify-between gap-8'>
+          <div className='flex flex-wrap justify-center justify-between gap-4 lg:gap-8'>
             <div className='size-40 rounded border-2 border-neutral-800'></div>
             <div className='size-40 rounded border-2 border-neutral-800'></div>
             <div className='size-40 rounded border-2 border-neutral-800'></div>
@@ -232,7 +232,7 @@ export default function Home() {
           className="-z-1"
           start="start"
           end="node1"
-          color="#f5f5f5"
+          color="#D4D4D4"
           headShape="circle"
           strokeWidth={2}
           headSize={6}
@@ -244,7 +244,7 @@ export default function Home() {
         <Xarrow
           start="node1"
           end="temp1"
-          color="#f5f5f5"
+          color="#D4D4D4"
           strokeWidth={2}
           headSize={0}
           path="smooth"
@@ -255,7 +255,7 @@ export default function Home() {
         {/* <Xarrow
           start="temp1"
           end="node2"
-          color="#f5f5f5"
+          color="#D4D4D4"
           strokeWidth={2}
           headSize={6}
           path="smooth"
@@ -266,7 +266,7 @@ export default function Home() {
         <Xarrow
           start="temp1"
           end="end"
-          color="#f5f5f5"
+          color="#D4D4D4"
           strokeWidth={2}
           headSize={0}
           path="smooth"
@@ -306,14 +306,14 @@ export default function Home() {
       {/* PROJECTS */}
       <Xwrapper>
         <div id="projects" className='relative mx-4 sm:mx-8 scroll-mt-30'>
-          <div className='w-full p-4 sm:p-8'>
+          <div className='w-full px-4 sm:px-8 py-12 sm:py-8'>
             <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-100'>
               Projects
             </div>
-            <div>
+            <div className='flex flex-col gap-15 lg:block'>
               <div id="project_start" className="absolute -top-1 left-1/2 -z-2"></div>
-              <div className="flex items-center">
-                <div className="h-fit text-left text-neutral-800 relative w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+              <div className="flex items-center flex-col-reverse lg:flex-row">
+                <div className="z-1 h-fit text-left text-neutral-800 relative w-full lg:w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
                   <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
                     <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
                   </div>
@@ -324,25 +324,11 @@ export default function Home() {
                     risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
                   </div>
                 </div>
-                <div id="project_node1" className="ml-2"></div>
+                <div id="project_node1" className="ml-0 lg:ml-2"></div>
               </div>
-              <div className="flex justify-end items-center">
-                <div id="project_node2" className="mr-2"></div>
-                <div className="h-fit text-left text-neutral-800 relative w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
-                  <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
-                    <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
-                  </div>
-                  <div className='mb-4 w-full'>Jio Platform Limited (JPL)</div>
-                  <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate,
-                    neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna
-                    risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
-                  </div>
-                  {/* <div id="temp1" className='absolute -right-40 bottom-10'></div> */}
-                </div>
-              </div>
-              <div className="flex items-center">
-                <div className=" h-fit text-left text-neutral-800 w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+              <div className="flex justify-end items-center flex-col lg:flex-row">
+                <div id="project_node2" className="mr-0 lg:mr-2"></div>
+                <div className="z-1 h-fit text-left text-neutral-800 relative w-full lg:w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
                   <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
                     <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
                   </div>
@@ -354,11 +340,25 @@ export default function Home() {
                   </div>
                   {/* <div id="temp1" className='absolute -right-40 bottom-10'></div> */}
                 </div>
-                <div id="project_node3" className="ml-2"></div>
               </div>
-              <div className="flex justify-end items-center">
-                <div id="project_node4" className="mr-2"></div>
-                <div className="h-fit text-left text-neutral-800 w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+              <div className="flex items-center flex-col-reverse lg:flex-row">
+                <div className="z-1 h-fit text-left text-neutral-800 w-full lg:w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
+                  <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
+                    <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
+                  </div>
+                  <div className='mb-4 w-full'>Jio Platform Limited (JPL)</div>
+                  <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate,
+                    neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna
+                    risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
+                  </div>
+                  {/* <div id="temp1" className='absolute -right-40 bottom-10'></div> */}
+                </div>
+                <div id="project_node3" className="ml-0 lg:ml-2"></div>
+              </div>
+              <div className="flex justify-end items-center flex-col lg:flex-row">
+                <div id="project_node4" className="mr-0 lg:mr-2"></div>
+                <div className="z-1 h-fit text-left text-neutral-800 w-full lg:w-2/5 bg-neutral-100 p-8 rounded-[24px] border border-neutral-400">
                   <div className='flex justify-between items-baseline w-full text-xl md:text-3xl font-bold'>
                     <span>Data Engineer</span><span className='text-sm font-light'>Dec 2023 - Present</span>
                   </div>
@@ -383,7 +383,7 @@ export default function Home() {
           className="-z-1"
           start="project_start"
           end="project_node1"
-          color="#f5f5f5"
+          color="#D4D4D4"
           headShape="circle"
           strokeWidth={2}
           headSize={6}
@@ -395,7 +395,7 @@ export default function Home() {
         <Xarrow
           start="project_node1"
           end="project_node2"
-          color="#f5f5f5"
+          color="#D4D4D4"
           headShape="circle"
           strokeWidth={2}
           headSize={6}
@@ -407,7 +407,7 @@ export default function Home() {
         <Xarrow
           start="project_node2"
           end="project_node3"
-          color="#f5f5f5"
+          color="#D4D4D4"
           headShape="circle"
           strokeWidth={2}
           headSize={6}
@@ -419,7 +419,7 @@ export default function Home() {
         <Xarrow
           start="project_node3"
           end="project_node4"
-          color="#f5f5f5"
+          color="#D4D4D4"
           headShape="circle"
           strokeWidth={2}
           headSize={6}
@@ -431,7 +431,7 @@ export default function Home() {
         <Xarrow
           start="project_node4"
           end="project_end"
-          color="#f5f5f5"
+          color="#D4D4D4"
           strokeWidth={2}
           headSize={6}
           path="smooth"

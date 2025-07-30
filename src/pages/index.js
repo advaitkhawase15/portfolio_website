@@ -173,7 +173,7 @@ export default function Home() {
           <HomeSvg className='w-5/6 md:w-2/3 lg:w-full absolute right-0 bottom-10 sm:-bottom-10 lg:-bottom-15 xl:-bottom-20' />
         </div>
       </div>
-      {/* SKILLS */}
+      {/* SKILLS  */}
       <div id="skills" className='mx-4 sm:mx-8 scroll-mt-30'>
         <div className='bg-neutral-100 rounded-[24px] p-4 sm:p-8'>
           <div className='mb-6 w-full text-2xl md:text-4xl text-center font-bold text-neutral-800'>

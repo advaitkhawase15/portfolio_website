@@ -55,7 +55,7 @@ export default function Home() {
     <>
       {/* NAVBAR */}
       <header className="mx-4 sm:mx-8 sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 text-sm">
-        <nav className="w-full flex mt-4 bg-white border border-gray-200 rounded-[35px] sm:rounded-[24px] mx-2 flex flex-wrap md:flex-nowrap items-center justify-between p-4 md:p-8 md:py-0 sm:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
+        <nav className="w-full flex mt-4 border rounded-[35px] sm:rounded-[24px] mx-2 flex flex-wrap md:flex-nowrap items-center justify-between p-4 md:p-8 md:py-0 sm:mx-auto bg-neutral-900 border-neutral-700">
           <a className="flex items-center" href='#home'>
             Portfolio
           </a>
@@ -145,14 +145,16 @@ export default function Home() {
               type="button"
               className="flex items-center justify-center rounded bg-neutral-100 w-full md:w-auto my-2 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-600 shadow-light-3 transition duration-150 ease-in-out hover:bg-neutral-200 hover:shadow-light-2 focus:bg-neutral-200 focus:shadow-light-2 focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-light-2 motion-reduce:transition-none dark:bg-neutral-800 dark:text-neutral-300 dark:shadow-black/30 dark:hover:bg-neutral-700 md:ml-auto"
             > */}
-            <button
-              type="button"
-              className="flex items-center justify-center rounded bg-neutral-100 text-black font-medium px-6 py-2 md:ml-auto my-2 transition-colors duration-200 hover:bg-neutral-800 hover:text-neutral-100 border hover:border-neutral-100" >
+            <a
+              // type="button"
+              href='/Advait_Khawase_resume.pdf' download 
+              target="_blank" type="application/pdf" rel="noopener noreferrer" 
+              className="flex items-center justify-center rounded bg-neutral-100 text-black font-medium px-6 py-2 md:ml-auto my-2 transition-colors duration-200 hover:bg-neutral-800 hover:text-neutral-100 border hover:border-neutral-100">
               <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
               </svg>
               Resume
-            </button>
+            </a>
           </div>
         </nav>
       </header>

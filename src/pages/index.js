@@ -354,13 +354,7 @@ export default function Home() {
           <div className='mb-6 w-full text-2xl md:text-4xl text-left font-bold text-neutral-800'>
             About Me
           </div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate,
-          neque nec lacinia auctor, magna velit iaculis velit, sit amet porttitor urna
-          risus sit amet purus. In imperdiet, nibh a rhoncus tincidunt, purus ligula
-          aliquet lorem, nec dignissim nulla purus vitae arcu. Nam et dolor eget felis
-          blandit auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Donec aliquet, ante posuere finibus condimentum, nunc sapien
-          elementum ex, a sagittis lorem mauris quis quam. Nunc rhoncus justo et ex pulvinar vulputate.
+          I am a data engineering professional with hands-on experience designing and implementing real-time data pipelines using Apache Airflow, Kafka, Spark, and Databricks. I have built automated workflows to ingest new user data from APIs, publish to Kafka topics, and process high-velocity data streams with Spark, achieving low-latency, reliable data delivery. My expertise also includes leveraging Databricks for scalable data processing and transformation, as well as monitoring Kafka message flow and topic health to ensure seamless operations. I am passionate about building efficient, production-ready data solutions that drive business value.
           <br />
           <br />
           <img className='size-40' src="/images/AwsCert.png" alt={"logo"} />
@@ -404,7 +398,7 @@ export default function Home() {
                     <a href='https://github.com/advaitkhawase15/stock-api-batch-processing'>Stock api batch processing</a>
                   </div>
                   <div>
-                  Developed a data pipeline project that collects real-time stock market data through an external API and stores it in an Amazon S3 bucket. An AWS Glue crawler is used to automatically detect and catalog the latest data stored in S3. The data is then processed using AWS Glue jobs and loaded into Amazon Redshift, enabling efficient querying and advanced analysis for reporting and business intelligence use cases.
+                    Developed a data pipeline project that collects real-time stock market data through an external API and stores it in an Amazon S3 bucket. An AWS Glue crawler is used to automatically detect and catalog the latest data stored in S3. The data is then processed using AWS Glue jobs and loaded into Amazon Redshift, enabling efficient querying and advanced analysis for reporting and business intelligence use cases.
                   </div>
                   {/* <div id="temp1" className='absolute -right-40 bottom-10'></div> */}
                 </div>

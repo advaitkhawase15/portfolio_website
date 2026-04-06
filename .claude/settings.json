@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Get-Content ''e:\\\\Web development\\\\portfolio_website\\\\src\\\\pages\\\\index.js'' | Select-Object -Skip 177 -First 50 | ForEach-Object { $i = 178; $_} | ForEach-Object -Begin { $n = 178 } -Process { ''{0}: {1}'' -f $n, $_ $n++ }\")",
+      "Bash(powershell -Command \"$lines = Get-Content ''e:\\\\Web development\\\\portfolio_website\\\\src\\\\pages\\\\index.js''; for \\($i = 177; $i -le 226; $i++\\) { Write-Output \\(''{0}: {1}'' -f \\($i+1\\), $lines[$i]\\) }\")",
+      "Bash(cmd /c 'more +177 e:\\\\Web development\\\\portfolio_website\\\\src\\\\pages\\\\index.js')",
+      "Bash(node -e \":*)",
+      "Read(//c/Users/Advait/**)"
+    ]
+  }
+}

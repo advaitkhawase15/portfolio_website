@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0a0a0a"/>
+  <!-- A letter -->
+  <path d="M5 24L10 8L15 24M7 19H13" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- K letter -->
+  <path d="M18 8V24M18 16L26 8M18 16L26 24" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

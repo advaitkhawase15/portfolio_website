@@ -247,7 +247,7 @@ export default function Home() {
             </div>
             <div className='w-36 h-36 md:w-40 md:h-40 rounded-2xl bg-white border border-neutral-200 shadow-sm hover:shadow-md hover:border-neutral-400 transition-all duration-200 flex flex-col justify-evenly p-4'>
               <svg className='w-1/3 mx-auto' viewBox="0 0 94 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M93.0625 79.5L68.0625 4.5C67.6276 3.20637 66.7812 2.09064 65.6527 1.32321C64.5241 0.55579 63.1754 0.178863 61.8125 0.250001H32.1875C30.8772 0.246618 29.599 0.655119 28.5335 1.41776C27.4681 2.18041 26.6692 3.25862 26.25 4.5L0.937457 79.5C0.609214 80.4671 0.522954 81.4999 0.686222 82.508C0.84949 83.5161 1.25731 84.4689 1.87401 85.2829C2.49071 86.097 3.29749 86.7475 4.22378 87.1776C5.15006 87.6076 6.16763 87.8042 7.18746 87.75H25.5C26.7995 87.7403 28.0638 87.3258 29.1168 86.5641C30.1698 85.8023 30.9591 84.7313 31.375 83.5L35.1875 72.375L53.9375 86.5625C55.0271 87.3516 56.3422 87.7681 57.6875 87.75H86.9375C87.947 87.7831 88.9494 87.571 89.8591 87.132C90.7687 86.6929 91.5583 86.04 92.1604 85.229C92.7625 84.418 93.1591 83.4732 93.3162 82.4755C93.4733 81.4777 93.3862 80.4567 93.0625 79.5ZM57.9375 83.625C57.4832 83.6254 57.0423 83.4711 56.6875 83.1875L21.375 57L20.8125 56.5625H39.5625L40.0625 55.25L46.3125 39.4375L60.3125 80.875C60.425 81.2224 60.446 81.593 60.3736 81.951C60.3012 82.3089 60.1377 82.6421 59.899 82.9185C59.6603 83.1949 59.3544 83.4051 59.0108 83.5289C58.6673 83.6526 58.2976 83.6857 57.9375 83.625ZM87.125 83.625H63.875C64.3418 82.2896 64.3418 80.8354 63.875 79.5L38.5625 4.5H61.8125C62.2538 4.50223 62.6836 4.64184 63.042 4.89944C63.4004 5.15704 63.6697 5.51986 63.8125 5.9375L89.125 80.9375C89.2105 81.2489 89.224 81.5757 89.1643 81.8931C89.1047 82.2105 88.9735 82.5101 88.7807 82.7692C88.5879 83.0283 88.3385 83.24 88.0516 83.3883C87.7647 83.5366 87.4478 83.6175 87.125 83.625Z" fill="black" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M93.0625 79.5L68.0625 4.5C67.6276 3.20637 66.7812 2.09064 65.6527 1.32321C64.5241 0.55579 63.1754 0.178863 61.8125 0.250001H32.1875C30.8772 0.246618 29.599 0.655119 28.5335 1.41776C27.4681 2.18041 26.6692 3.25862 26.25 4.5L0.937457 79.5C0.609214 80.4671 0.522954 81.4999 0.686222 82.508C0.84949 83.5161 1.25731 84.4689 1.87401 85.2829C2.49071 86.097 3.29749 86.7475 4.22378 87.1776C5.15006 87.6076 6.16763 87.8042 7.18746 87.75H25.5C26.7995 87.7403 28.0638 87.3258 29.1168 86.5641C30.1698 85.8023 30.9591 84.7313 31.375 83.5L35.1875 72.375L53.9375 86.5625C55.0271 87.3516 56.3422 87.7681 57.6875 87.75H86.9375C87.947 87.7831 88.9494 87.571 89.8591 87.132C90.7687 86.6929 91.5583 86.04 92.1604 85.229C92.7625 84.418 93.1591 83.4732 93.3162 82.4755C93.4733 81.4777 93.3862 80.4567 93.0625 79.5ZM57.9375 83.625C57.4832 83.6254 57.0423 83.4711 56.6875 83.1875L21.375 57L20.8125 56.5625H39.5625L40.0625 55.25L46.3125 39.4375L60.3125 80.875C60.425 81.2224 60.446 81.593 60.3736 81.951C60.3012 82.3089 60.1377 82.6421 59.899 82.9185C59.6603 83.1949 59.3544 83.4051 59.0108 83.5289C58.6673 83.6526 58.2976 83.6857 57.9375 83.625ZM87.125 83.625H63.875C64.3418 82.2896 64.3418 80.8354 63.875 79.5L38.5625 4.5H61.8125C62.2538 4.50223 62.6836 4.64184 63.042 4.89944C63.4004 5.15704 63.6697 5.51986 63.8125 5.9375L89.125 80.9375C89.2105 81.2489 89.224 81.5757 89.1643 81.8931C89.1047 82.2105 88.9735 82.5101 88.7807 82.7692C88.5879 83.0283 88.3385 83.24 88.0516 83.3883C87.7647 83.5366 87.4478 83.6175 87.125 83.625Z" fill="black" />
               </svg>
               <span>Azure Cloud</span>
             </div>
@@ -334,11 +334,13 @@ export default function Home() {
                 <div className='mb-4 w-full'>Jio Platform Limited (JPL)</div>
                 <div>
                   <ul className="list-disc list-outside ml-4 space-y-2 text-sm">
-                    <li>Migrated <strong>50+ data workflows</strong> handling <strong>1M–10M+ records daily</strong> for Partner Center from Informatica to Databricks gold layer, achieving ~15% performance boost via serverless clusters and optimized joins.</li>
-                    <li>Migrated <strong>25+ projects</strong> from SAP HANA stored procedures to Hadoop-based PySpark pipelines, reducing SAP HANA compute costs by ~35% via partition pruning and predicate pushdown.</li>
-                    <li>Conducted POC for <strong>NiFi and ADF</strong> during cloud migration, leading to adoption of NiFi for historical ingestion of ~1TB+ data per business unit and ADF for full &amp; incremental ETL across <strong>400+ pipelines</strong>.</li>
-                    <li>Managed <strong>300+ workflows</strong> covering <strong>6,000+ tables</strong>, implementing Medallion architecture with schema evolution, data quality checks, and log maintenance.</li>
-                    <li>Developed <strong>100+ shell scripts</strong> for Sqoop and Airflow automation and <strong>25+ Python scripts</strong> for NiFi development, cutting manual effort from hours to under 5 minutes per task.</li>
+                    <li>Delivered <strong>300+ workflows</strong> co-owning <strong>6,000+ Delta Bronze tables</strong> across Oracle, MSSQL, and MongoDB sources via a reusable ingestion framework — a 19-column CSV config and single parameterized notebook eliminated per-workflow boilerplate. <em>(Databricks Asset Bundles, Auto Loader, ADLS Gen2)</em></li>
+                    <li>Built and deployed <strong>100+ serverless streaming pipelines</strong> ingesting from <strong>20 telco BSS source systems</strong> (Ericsson, CleverTap, NSE, NSD, EPC XML) into Delta Bronze with exactly-once semantics. <em>(Kafka, Airflow, DLT, Unity Catalog, ADLS Gen2)</em></li>
+                    <li>Migrated <strong>50+ Partner Center workflows</strong> (<strong>1M–10M+ daily records</strong>) from legacy Informatica to the Databricks gold layer, removing per-workflow license dependency and improving runtime by <strong>~15%</strong>.</li>
+                    <li>Engineered incremental file-detection across a NAS → ADLS document pipeline (DocFlow), eliminating redundant reprocessing of <strong>10,000+ daily files</strong> (PDFs, DOCXs, JPGs). <em>(Airflow, ADF, Databricks)</em></li>
+                    <li>Drove the cloud-migration architecture POC — recommending <strong>NiFi</strong> for 1TB+/unit historical ingestion and <strong>ADF</strong> for full &amp; incremental loads, adopted across <strong>400+ pipelines</strong>.</li>
+                    <li>Built a <strong>Trade Compliance</strong> aggregation pipeline powering downstream BI reports — consolidated <strong>50+ source tables</strong> (10K–1M+ records each) into a unified Databricks aggregate, cutting report-refresh runtime to <strong>30 min</strong> via caching, repartitioning, and broadcast joins.</li>
+                    <li>Maintained <strong>99% pipeline uptime</strong> over <strong>12+ months</strong> by monitoring <strong>200+ Airflow DAGs</strong>, resolving Spark/YARN bottlenecks, and implementing failure alerting.</li>
                   </ul>
                 </div>
                 <div id="temp1" className='absolute -right-10 sm:-right-30 bottom-10'></div>
@@ -409,13 +411,13 @@ export default function Home() {
             <div className='flex-1 h-px bg-neutral-300'></div>
           </div>
           <p className='mb-4'>
-            Data Engineer at <strong>Jio Platforms</strong> owning <strong>300+ workflows</strong> across <strong>6,000+ tables</strong> in trade compliance, partner operations, and document processing. I design and deliver end-to-end data solutions — from raw ingestion to gold-layer analytics — on <strong>Databricks</strong>, Hive/HDFS, and Azure.
+            Data Engineer at <strong>Jio Platforms</strong> co-owning <strong>300+ workflows</strong> across <strong>6,000+ Delta tables</strong> in trade compliance, partner operations, and document processing. I design and deliver end-to-end data solutions — from raw ingestion to gold-layer analytics — on <strong>Databricks</strong>, Hive/HDFS, and Azure.
           </p>
           <p className='mb-4'>
-            Specialized in <strong>Medallion architecture</strong> with schema evolution, data quality enforcement, and log maintenance at scale. Core stack: <strong>PySpark, ADF, Airflow, NiFi, Python, SQL</strong>. I've led cloud migrations off SAP HANA and Informatica, cutting compute costs by ~35% and reducing manual effort from hours to minutes through automation.
+            Specialized in <strong>Medallion architecture</strong> with schema evolution, data quality enforcement, and exactly-once streaming at scale. Core stack: <strong>PySpark, Databricks, ADF, Airflow, Kafka, NiFi</strong>. I've migrated <strong>50+ workflows</strong> off legacy Informatica onto a single lakehouse and led the NiFi/ADF cloud-migration POC adopted across <strong>400+ pipelines</strong>.
           </p>
           <p className='mb-4'>
-            Beyond enterprise pipelines, I build AI-augmented tools — including a full-stack job aggregation platform powered by <strong>Gemini LLM</strong> and <strong>LangGraph</strong> orchestration that received a seed funding offer. I hold a <strong>B.Tech in Computer Science</strong> (CGPA 8.7) and am an <strong>AWS Certified Cloud Practitioner</strong>.
+            Beyond enterprise pipelines, I build AI-augmented tools — including <strong>lazyfruit.com</strong>, a full-stack job platform powered by <strong>Gemini</strong> and <strong>LangGraph</strong> that received a <strong>pre-seed funding offer</strong> (operating bootstrapped by choice). I hold a <strong>B.Tech in Computer Science</strong> (CGPA 8.7) and am an <strong>AWS Certified Cloud Practitioner</strong>.
           </p>
           <img className='size-40 mt-2' src="/images/AwsCert.png" alt={"AWS Certified Cloud Practitioner"} />
         </div>
@@ -437,13 +439,33 @@ export default function Home() {
                     <a href='https://www.lazyfruit.com' target='_blank' rel='noopener noreferrer'>AI-Powered Job Aggregation Platform</a>
                   </div>
                   <div className='flex flex-wrap gap-2 mb-4'>
-                    {['Python', 'Gemini API', 'LangGraph', 'Playwright', 'Node.js', 'React', 'PostgreSQL', 'AWS'].map(tag => (
+                    {['Python', 'Playwright', 'Gemini API', 'LangGraph', 'FastAPI', 'PostgreSQL', 'AWS'].map(tag => (
                       <span key={tag} className='px-3 py-1 text-xs font-medium bg-neutral-100 text-neutral-600 rounded-full border border-neutral-300 hover:bg-neutral-200 transition-colors duration-150'>{tag}</span>
                     ))}
                   </div>
                   <div>
-                    Full-stack job platform with an AI-driven scraper using Gemini LLM to autonomously find job links, paginate, and navigate ATS iframes (Greenhouse, Lever, Workday) via 3-tier fallback. Scrapes 3,000+ jobs with async Playwright (5-tab concurrency) into AWS RDS PostgreSQL. React + Node.js frontend/backend with AWS Cognito auth and CI/CD; migrating orchestration to LangGraph. Received seed funding offer.
+                    Full-stack job platform with a rule-free, stateful scraper that keeps <strong>3,000+ live listings</strong> fresh across hundreds of ATS layouts (Workday, Greenhouse, Lever, iCIMS). Gemini extracts structured data from cleaned HTML while plain Python owns all control flow — a two-stage pipeline (sequential listing discovery → parallel detail extraction across 5 async workers on one <em>playwright-stealth</em> browser) at <strong>~3.6s/job</strong>, with CDC-style lifecycle tracking, schema normalization, and dedup on incremental loads into PostgreSQL. Cheap-by-default model escalation and a <strong>FastAPI + WebSocket</strong> monitoring UI; orchestration is being rebuilt on <strong>LangGraph</strong>. Received a <strong>pre-seed funding offer</strong> (bootstrapped by choice).
                   </div>
+                  <a
+                    href="https://dev.to/advait_khawase/we-made-our-scraper-agentic-it-got-slower-2nk0"
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group/blog inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-neutral-900 hover:text-neutral-600 transition-colors duration-150'
+                  >
+                    Read the engineering write-up
+                    <svg
+                      className='w-4 h-4 transition-transform duration-150 group-hover/blog:translate-x-0.5'
+                      xmlns='http://www.w3.org/2000/svg'
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      stroke='currentColor'
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    >
+                      <path d='M5 12h14M13 6l6 6-6 6' />
+                    </svg>
+                  </a>
                 </div>
                 <div id="project_node1" className="ml-0 lg:ml-2"></div>
               </div>
